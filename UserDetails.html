@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<style type="text/css">
+		.button {
+			background-color: gray;
+			border: none;
+			color: white;
+			padding: 8px 15px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 20px;
+			margin: 4px 2px;
+			cursor: pointer;
+		}
+		</style>
+		<meta charset="ISO-8859-1">
+		<title>User Details Entered By Agent</title>
+	</head>
+	<body>
+		<form action = "http://localhost:8080/userInfo" method = "POST" enctype = "multipart/form-data">
+		<center><img alt="Logo" src="agent.jpg" style="width: 25em;height: 4em"></center>
+		<p style="font-family: cursive;font-style: normal;font-size: x-large;;">Apply for Digital Identification</p>
+		<p><b>Don't have ?</b> <i style="font-size: medium;">Fill all the details and we will mail you the Digital Identification number in your mailbox.</i></p>
+			<table cellspacing = "20em" style="border: 1px solid black;">
+				<tr>
+					<th style="text-align: left; font-family: cursive;font-style: normal;">Legal Name * <br><br><input type ="text" id= "name" name="name"></th>
+					<th style="text-align: left; font-family: cursive;font-style: normal; padding-left: 10em;">SSN * <br><br><input type ="number" id="ssn" name="ssn" placeholder="123-45-6789" onKeyPress="if(this.value.length==9) return false;"></th>
+					<th style="text-align: left; padding-left: 10em; font-family: cursive;font-style: normal;">Date Of Birth * (mm/dd/yyyy) <br><br><input type ="date" id="date" name="dob"></th>
+				</tr>
+				<tr>
+					<th style="text-align: left; font-family: cursive;font-style: normal;">Gender * <br><br><input type ="checkbox" class="messageCheckbox" name="gender[]" value="Male">Male<input type ="checkbox" class="messageCheckbox" name="gender[]" value="Female">Female</th>
+					<th style="text-align: left; padding-left: 10em; font-family: cursive;font-style: normal;">Email * <br><br><input type ="text" id="email" name="email"></th>
+					<th style="text-align: left; padding-left: 10em; font-family: cursive;font-style: normal;">Cell Phone * <br><br>+&nbsp;<input type ="number" name="countrycode" id="code" style="width: 3em;" onKeyPress="if(this.value.length==2) return false;">&nbsp;-&nbsp;<input type ="number" name="phone" id="mobilenumber" onKeyPress="if(this.value.length==10) return false;"></th>
+				</tr>
+				<tr>
+					<th style="text-align: left; font-family: cursive;font-style: normal;">Address * <br><br><input type ="text" name="address" id="address" style="width: 30em;"></th>
+					<th style="text-align: left; padding-left: 10em; font-family: cursive;font-style: normal;">Upload Photo Id Proof * <br><br><input type ="file" name="file" id="file" accept="image/*"></th>
+				</tr>
+				<tr>
+					<th style="padding-left: 20em;"></th>
+					<th><br><br><input type="submit" class="submit" value="Submit" id = "submit"><br><br></th>
+					<th></th>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>
